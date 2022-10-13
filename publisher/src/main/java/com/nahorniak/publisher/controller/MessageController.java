@@ -6,13 +6,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/")
 public class MessageController {
 
     private final MessagePublisherService service;
 
-
-    @PostMapping
+    @PostMapping("/publish")
     public void sendMessage(@RequestBody String message){
         service.send(message);
     }
